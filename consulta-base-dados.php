@@ -23,7 +23,7 @@
 			$user = 'root';
 			$password = 'root';
 			$dbname = 'curso_php';
-			$port = '8889';
+			$port = '3306';
 
 			$db_connect = new mysqli($server, $user, $password, $dbname, $port);
 
@@ -31,9 +31,30 @@
 				echo 'Não foi possível conectar à base de dados.';
 			} else {
 				// echo 'Conectado à base de dados.' . '<br><br>';
-
 				
-			}
+				$sql = "SELECT * FROM clientes";
+
+				$result = $db_connect->query($sql); ?>
+
+				<table>
+
+			<tr>
+				<th>Nome</th>
+				<th>E-mail</th>
+			</tr>
+
+				<? while ($row = $result->fetch_assoc()) { ?>
+
+					<tr>
+						<td><?php echo $row['nome']; ?></td>
+						<td><?php echo $row['email']; ?></td>
+				</tr>
+				
+				<?php } ?>
+
+			</table>
+				
+			<?php }
 
 		?>
 

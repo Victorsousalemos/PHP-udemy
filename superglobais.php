@@ -27,6 +27,12 @@
 		$msg = 'hello world';
 		$bye = 'bye bye world';
 
+		function mensagem(){
+			echo $GLOBALS['bye'];
+		}
+
+		mensagem();
+		
 		?>
 
 		<p><?php ?></p>

@@ -17,20 +17,29 @@
 
 			<?php
 				
+				function print_num() {
+					static $num;
+					$num += 5;
+					echo $num;
+				}
 
 			?>
 
 			<p>
-			<?php ?>	
+			<?php print_num(); ?>	
 			</p><br>
 
 			<p>
-			<?php ?>	
+			<?php print_num(); ?>	
 			</p><br>
 
-			
+			<p>
+			<?php print_num(); ?>	
+			</p><br>
 
-			
+			<p>
+			<?php print_num(); ?>	
+			</p><br>
 
 
 		

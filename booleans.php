@@ -12,7 +12,9 @@
 
 		<h3>True ou False?</h3><br>
 		
-		<p></p>
+		<?php $teste = 3 <> 30; ?>
+
+		<p><?php var_dump($teste); ?></p>
 
 
 

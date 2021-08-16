@@ -33,25 +33,38 @@
 									"url" => "http://www.udemy.com",
 									"aval" => 90
 								)
+								array(
+									"n_alunos" => 300,
+									"titulo" => "Aprenda PHP com facilidade",
+									"url" => "http://www.udemy.com",
+									"aval" => 150
+								),
+								array(
+									"n_alunos" => 280,
+									"titulo" => "JavaScript do zero",
+									"url" => "http://www.udemy.com",
+									"aval" => 90
+								)
 				); 
 			?>
 
 
 		<h3>Meus Cursos</h3>
 
-			
+		<ul>
 
-		<h3>Agora é a sua vez</h3>
-
-			<p>Crie um Array, de preferência multidimensional, e solte as informações de cada item deste array em uma lista usando o loop foreach.</p>
-			<br>
-
+			<?php foreach ($cursos as $item) { ?>
 		
+			<li>
+					<a href="<?php echo $item['url']; ?>"><?php echo $item['titulo']; ?></a><br>
+					<?php echo $item['n_alunos']  'alunos' . ' / ' . $item['aval'] . 'avaliações'; ?>
+			</li><br>
+	
+			<?php } ?>
+			
+	</ul>
 
-
-
-
-		<?php include 'functions/bottom_index.php'; ?>
+			<?php include 'functions/bottom_index.php'; ?>
 
 
 	</body>

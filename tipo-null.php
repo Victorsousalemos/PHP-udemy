@@ -14,21 +14,21 @@
 
 		<h3>NULL = Ausência de valor</h3>
 
-
-		<h3>Resultado da pesquisa</h3>
-
-		<h3>Agora é a sua vez</h3>
-
-			<p>Crie um Array, de preferência multidimensional, e solte as informações de cada item deste array em uma lista usando o loop foreach.</p>
-			<br>
-
+		<?php $posts = 0;
 		
+		var_dump($posts);
 
+		echo '<br><br>';
 
+		if ($posts == NULL) {
+			echo 'A variável é igual a NULL';
+		} else {
+			echo 'A variável NÃO é igual a NULL';
+		}
 
+		?>
 
-
-
+				
 
 		<?php include 'functions/bottom_index.php'; ?>
 

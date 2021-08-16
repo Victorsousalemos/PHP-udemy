@@ -44,7 +44,21 @@
 
 			<?php foreach ($produtos as $item) { ?>
 
-			<option><?php echo $item['nome']; ?></option>
+			<option <?php if ($item['estoque'] == 0) {echo 'disabled';} ?> >
+				<?php echo $item['nome']; ?>
+
+				<?php
+				
+				if ($item['estoque'] == 0) {
+					echo ' (Produto indisponivel)';
+				} elseif ($item['estoque'] == 1) {
+					echo ' (Última unidade em estoque)';
+				} else {
+					echo ' (Em estoque)';
+				}
+				?>
+
+			</option>
 
 			<?php } ?>
 			
@@ -52,16 +66,7 @@
 
 			
 
-		<h3>Agora é a sua vez</h3> 
-
-		<p>Apague todo o código acima e tente recriá-lo desde o começo. Crie um array com outros produtos, faça o loop foreach para criar o select box e depois use os condicionais para desabilitar os itens que não estão em estoque.</p><br>
-
-			<p></p>
-			<br>
-
 		
-
-
 		<?php include 'functions/bottom_index.php'; ?>
 
 

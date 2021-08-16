@@ -48,11 +48,28 @@
 			
 		<?php 
 
+		$aluno_novo = array();
+		$aluno_novo['matricula'] = '98866';
+		$aluno_novo['nome'] = 'Carla Pereira';
+		$aluno_novo['ano_nas'] = 1986;
+		$aluno_novo['cidade'] = 'Fortaleza';
+		array_push($alunos, $aluno_novo);
+
+		$aluno_90 = array();
+
+		foreach ($alunos as $aluno) {
+			if ($aluno['ano_nasc'] >= 1990) {
+				$alunos_90[$aluno['matricula']] = array();
+				$alunos_90[$aluno['matricula']]['nome'] = $aluno['nome'];
+				$alunos_90[$aluno['matricula']]['ano_nasc'] = $aluno['ano_nasc'];
+			}
+		}
+
 		?>
 
 		<h4>Alunos Nascidos depois de 1990: </h4>
 		<br>
-		<pre></pre>
+		<pre><?php print_r($alunos_90); ?></pre>
 
 
 
@@ -64,16 +81,22 @@
 
 		<h4>Matrícula dos Alunos Nascidos depois de 1990: </h4>
 		<br>
-		<pre></pre>
+		<pre><?php print_r(array_keys($alunos_90)); ?></pre>
 
 
 
 
 		<h3>In Array</h3>
-
+		<?php $matricula = '98840'; ?>
 		<h4>Busca de aluno por matrícula: </h4>
 		<br>
-		<p></p>
+		<?php if (in_array($matricula,array_keys($alunos_90))) { ?>
+		<p><?php echo 'A matricula' . $matricula . ' pertence a(o) aluno(a) ' . $alunos_90[
+			$matricula]['nome'] . ', nascido(a) no ano de ' . $alunos_90[$matricula]['ano_nasc'] . 
+			'.'; ?></p>
+			<?php } else { ?>
+			<p><?php echo 'A matricula ' . $matricula . ' não foi encontrada.'; ?></p>
+		<?php } ?>
 
 
 		

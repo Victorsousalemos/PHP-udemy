@@ -24,7 +24,8 @@
 		<p>
 
 			<?php
-				
+				$agora = time();
+				echo date("d/m/Y",$agora);
 			?>
 			
 		</p>
@@ -33,8 +34,8 @@
 		<h3>Função mktime</h3>
 
 			<?php
-				
-				
+				$nascimento = mktime(0,0,0,5,30,1986);
+				echo date("d m Y",$nascimento);
 				
 			?>
 
@@ -46,7 +47,8 @@
 		<h3>Função strtotime</h3>
 
 			<?php
-				
+				$outra_data = strtotime("now + 4weeks monday");
+				echo date("d m Y",$outra_data);
 			?>
 
 		<p>
@@ -58,7 +60,7 @@
 		<h3>Função date</h3>
 
 			<?php
-				
+				echo date("d/M/Y H:i:s",$outra_data);
 			?>
 
 		<p>
@@ -69,7 +71,8 @@
 		<h3>Fuso horário</h3>
 
 			<?php
-				
+				date_default_timezone_set('America/Sao_Paulo');
+				echo date_default_timezone_get();
 			?>			
 
 		<p>
@@ -81,7 +84,15 @@
 		<h3>Cálculos com data e hora</h3>
 
 			<?php
-				
+				$data_entrega = strtotime('27 dec 2017');
+				$data_esperada = strtotime('24 dec 2017');
+
+				if ($data_entrega > $data_esperada) {
+					$atraso = ($data_entrega - $data_esperada) / (60 * 60 * 24);
+					echo 'Produto entregue com atraso de ' . $atraso . ' dias.';
+				} else {
+					echo 'Produto entregue no prazo';
+				}
 			?>
 
 		<p>

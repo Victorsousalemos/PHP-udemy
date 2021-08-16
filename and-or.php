@@ -28,23 +28,39 @@
 
 		<h3>AND</h3>
 		<h4>Situação do aluno: </h4>
-		<p></p>
+		<p>
+			<?php
+
+			if ($aluno['media'] >= $media_aprov && $presenca_aluno >=
+			$presenca_aprov) {
+				echo 'O aluno foi aprovado!';
+			} else {
+				echo 'O aluno foi reprovado!';
+			}
+
+			?>
+
+		</p>
 		<br>
 
 		<h3>OR</h3>
 		<h4>Situação do aluno: </h4>
-		<p></p>
+		<p>
+
+			<?php
+
+			if ($aluno['media'] < $media_aprov || $presenca_aluno <
+			$presenca_aprov) {
+				echo 'O aluno foi reprovado!';
+			} else {
+				echo 'O aluno foi aprovado!';
+			}
+
+			?>
+		</p>
 		<br>
 
 		
-
-		
-
-
-
-
-
-
 
 		<?php include 'functions/bottom_index.php'; ?>
 
